@@ -16,5 +16,5 @@ CHUNK_OVERLAP = 200
 VECTORSTORE_DIR = "vectorstore"
 COLLECTION_NAME = "product_manuals"
 
-# Retrieval
+# Number of retrieved chunks sent to LLM
 TOP_K = 4
