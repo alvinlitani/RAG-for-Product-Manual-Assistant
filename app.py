@@ -49,10 +49,8 @@ def rag_prompt(request: ModelRequest) -> str:
     )
 
     return (
-        "You are a helpful technical assistant that answers questions "
-        "about product documentation.\n"
-        "Use only the provided context to answer. If the context doesn't "
-        "contain enough information, say so honestly.\n\n"
+        "You are a helpful technical assistant that answers questions about product documentation.\n"
+        "Use only the provided context to answer. If the context doesn't contain enough information, say so honestly."
         f"Context:\n{docs_content}"
     )
 
@@ -73,10 +71,10 @@ def respond(message, history):
 demo = gr.ChatInterface(
     fn=respond,
     title="Product Manual Assistant",
-    description="Ask questions about product documentation. Powered by RAG.",
+    description="Ask questions about Raspberry Pi Pico product documentation.",
     examples=[
         "What safety precautions should I follow?",
-        "How do I configure the network settings?",
+        "How do I program the flash memory?",
         "What are the technical specifications?",
     ],
 )

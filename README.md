@@ -11,6 +11,10 @@ A RAG (Retrieval-Augmented Generation) chatbot that answers technical questions 
 
 ![Demo Screenshot](demo.png)
 
+For the purpose of this demo, the Raspberry Pi Pico product documentation is used.
+
+For a live demo, you can have a look at this [HuggingFace page](https://huggingface.co/spaces/aliauw/product-manual-assistant).
+
 ## Overview
 
 The user can ask natural language questions about product documentation and receive accurate, context-grounded answers. Instead of searching through hundreds of pages manually, the chatbot retrieves the most relevant sections and generates relevant response.
@@ -78,7 +82,7 @@ User Question
 1. Clone the repository:
    ```bash
    git clone https://github.com/alvinlitani/RAG-for-Product-Manual-Assistant.git
-   cd product-manual-assistant
+   cd RAG-for-Product-Manual-Assistant
    ```
 
 2. Create and activate the conda environment:
