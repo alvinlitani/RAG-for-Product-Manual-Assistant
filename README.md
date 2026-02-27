@@ -141,5 +141,4 @@ All key parameters are centralized in `config.py`:
 
 - Structure-aware chunking to handle tables and section headers in the PDF files
 - Contextual retrieval by adding section summaries to each chunk before embedding
-- Conversational memory so users can ask follow-up questions
 - Evaluation pipeline to measure how well the retrieval and responses perform
