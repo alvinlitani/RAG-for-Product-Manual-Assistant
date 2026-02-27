@@ -96,8 +96,6 @@ demo = gradio.ChatInterface(
         "How do I program the flash memory?",
         "What are the technical specifications?",
     ],
-    retry_btn="Retry",
-    undo_btn="Undo",
     theme=gradio.themes.Glass(),
 )
 
