@@ -68,23 +68,32 @@ agent = create_agent(
     middleware=[rag_prompt],        # run rag_prompt before every LLM call, remove for agentic RAG
 )
 
-# function to handle the actual messages to and from the LLM
 def respond(message, history):
     try:
         messages = []
+        
+        '''
+        Gradio 6 changes format for history into list of content:
+        history = [
+            {"role": "user", "content": [{"type": "text", "text": "What is the capital of France?"}]},
+            {"role": "assistant", "content": [{"type": "text", "text": "Paris"}]}
+        ]
+        '''
+        for msg in history[-4:]:
+            messages.append({
+                "role": msg["role"],
+                "content": msg["content"][0]["text"]    # take the text of first content
+            })
 
-        # when calling LLM, append last 2 call/response history beforehand
-        for user_msg, assistant_msg in history[-2:]:
-            messages.append({"role": "user", "content": user_msg})
-            messages.append({"role": "assistant", "content": assistant_msg})
-       
         messages.append({"role": "user", "content": message})
-
         result = agent.invoke({"messages": messages})
-        return result["messages"][-1].text
+        
+        return result["messages"][-1].text              # return last message which is the LLM response
     
     except Exception as e:
         return f"Error: {str(e)}"       # print error message if occurs
+
+
 
 # chat frontend using gradio
 demo = gradio.ChatInterface(
@@ -96,8 +105,7 @@ demo = gradio.ChatInterface(
         "How do I program the flash memory?",
         "What are the technical specifications?",
     ],
-    theme=gradio.themes.Glass(),
 )
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(theme=gradio.themes.Ocean())
