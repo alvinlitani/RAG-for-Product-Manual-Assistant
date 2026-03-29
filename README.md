@@ -11,7 +11,7 @@ A RAG (Retrieval-Augmented Generation) chatbot that answers technical questions 
 
 ![Demo Screenshot](demo.png)
 
-For the purpose of this demo, the Raspberry Pi Pico product documentation is used.
+For the purpose of this demo, the Siemens S7-1200 PLC product documentation is used.
 
 For a live demo, you can have a look at this [HuggingFace page](https://huggingface.co/spaces/aliauw/product-manual-assistant).
 
